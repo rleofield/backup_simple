@@ -1,0 +1,14 @@
+cache
+crash
+lock
+spool/
+run/
+
+tmp/kdecache*
+lib/iptraf
+named
+tmp
+spool
+lib
+run
+
