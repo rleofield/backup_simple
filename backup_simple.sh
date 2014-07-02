@@ -160,16 +160,25 @@ function do_sourcefolders(){
 
 
 
-# Basis Folder des nachfolgenden Backup
+# root Folder des nachfolgenden Backup
 SOURCEDIR=/
 
-# Vorschlag, ohne /home
-do_sourcefolders $SOURCEDIR "bin boot etc initrd lib lib32 lib64 opt root sbin selinux srv usr var"
+# Vorschlag, ohne /home,  /home wird weiter unten gesichert:
+do_sourcefolders $SOURCEDIR "var"
 
 
 # und noch der /home Folder:
-SOURCEDIR=/home
-do_sourcefolders $SOURCEDIR "user1 user2 user3 user4"
+#(Ausgabe von ls -l /home | grep '^d' | awk '{print $8}' )
+
+#Beispiel:
+#user1
+#user2
+#user3
+#user4
+
+#SOURCEDIR=/home
+#do_sourcefolders $SOURCEDIR "richard user2 user3 user4"
+#do_sourcefolders $SOURCEDIR "richard"
 
 # usw.
 
